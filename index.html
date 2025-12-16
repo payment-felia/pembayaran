@@ -81,8 +81,11 @@ body{
 
 .qris{
   width:100%;
+  max-width:300px;       /* batasi ukuran supaya tidak blur */
+  display:block;
+  margin:10px auto;
   border-radius:10px;
-  margin-top:10px;
+  image-rendering: crisp-edges; /* menjaga ketajaman QR */
 }
 
 .marquee{
@@ -104,7 +107,6 @@ body{
   <div class="box">
     <h2>
       <img src="https://iconlogovector.com/uploads/images/2024/03/lg-65e38a526d27d-SeaBank.webp" alt="SeaBank">Seabank
-
     </h2>
     <div class="info">Nama Penerima: <b>FEBRIAN MAULANA</b></div>
     <p>Nomor Rekening:</p>
@@ -146,12 +148,11 @@ body{
     <p>Scan atau Screen Shoot QRIS di bawah:</p>
 
     <a href="https://postimg.cc/QHh4nprK" target="_blank">
-  <img 
-    src="https://i.postimg.cc/QHh4nprK/1765904059288.png"
-    alt="QRIS Feliaaa"
-    class="qris">
-</a>
-
+      <img 
+        src="https://i.postimg.cc/QHh4nprK/1765904059288.png"
+        alt="QRIS Feliaaa"
+        class="qris">
+    </a>
 
     <br><br>
     <button class="copy-btn" onclick="copyQRIS()">Salin Link QRIS</button>
