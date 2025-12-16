@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEMBAYARAN - Rizky Store</title>
+
+<style>
+body{
+  background:#4b3ca7;
+  margin:0;
+  font-family:Arial, sans-serif;
+  color:white;
+}
+
+.container{
+  max-width:600px;
+  margin:30px auto;
+  padding:20px;
+}
+
+.title{
+  text-align:center;
+  font-size:45px;
+  font-weight:bold;
+}
+
+.subtitle{
+  text-align:center;
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:30px;
+}
+
+.box{
+  background:#6a5acd;
+  padding:20px;
+  margin-bottom:20px;
+  border-radius:12px;
+}
+
+.box h2{
+  margin:0 0 10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.box h2 img{
+  width:30px;
+  height:30px;
+}
+
+.info{
+  font-size:14px;
+  margin-bottom:8px;
+  opacity:0.9;
+}
+
+.number{
+  background:#3b2e84;
+  padding:10px;
+  border-radius:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.copy-btn{
+  background:#5e4cbf;
+  color:white;
+  border:none;
+  padding:6px 12px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.copy-btn:hover{
+  background:#7a6bf0;
+}
+
+.qris{
+  width:100%;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+.marquee{
+  margin-top:12px;
+  font-weight:bold;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="title">PEMBAYARAN</div>
+  <div class="subtitle">BY Rizky Store⁰⁴</div>
+
+  <!-- SEABANK -->
+  <div class="box">
+    <h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/SeaBank_logo.svg">
+      SeaBank
+    </h2>
+    <div class="info">Nama Penerima: <b>RIZKY STORE</b></div>
+    <p>Nomor Rekening:</p>
+    <div class="number">
+      <span id="seabank">1234567890</span>
+      <button class="copy-btn" onclick="copyText('seabank')">Salin</button>
+    </div>
+
+    <marquee class="marquee" scrollamount="4">
+      JIKA SUDAH TRANSFER VIA SEABANK, MOHON KIRIM BUKTI PEMBAYARAN
+    </marquee>
+  </div>
+
+  <!-- GOPAY -->
+  <div class="box">
+    <h2>
+      <img src="https://ar-hosting.pages.dev/1747838712902.jpg">
+      GoPay
+    </h2>
+    <div class="info">Nama Penerima: <b>RIZKY STORE</b></div>
+    <p>Nomor GoPay:</p>
+    <div class="number">
+      <span id="gopay">0895403466818</span>
+      <button class="copy-btn" onclick="copyText('gopay')">Salin</button>
+    </div>
+
+    <marquee class="marquee" scrollamount="4">
+      JIKA SUDAH TRANSFER VIA GOPAY, MOHON KIRIM BUKTI PEMBAYARAN
+    </marquee>
+  </div>
+
+  <!-- QRIS -->
+  <div class="box">
+    <h2>
+      <img src="https://ar-hosting.pages.dev/1747885927235.jpg">
+      QRIS
+    </h2>
+    <div class="info">Nama Penerima: <b>RIZKY STORE</b></div>
+    <p>Scan atau klik QRIS di bawah:</p>
+
+    <a href="https://telegra.ph/file/a37e1f3dd73620a7bf80e.jpg" target="_blank">
+      <img class="qris" src="https://telegra.ph/file/a37e1f3dd73620a7bf80e.jpg">
+    </a>
+
+    <br><br>
+    <button class="copy-btn" onclick="copyQRIS()">Salin Link QRIS</button>
+
+    <marquee class="marquee" scrollamount="4">
+      JIKA SUDAH MELAKUKAN PEMBAYARAN VIA QRIS, MOHON KIRIM BUKTI
+    </marquee>
+  </div>
+
+</div>
+
+<script>
+function copyText(id){
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text);
+  alert("Disalin: " + text);
+}
+
+function copyQRIS(){
+  navigator.clipboard.writeText(
+    "https://telegra.ph/file/a37e1f3dd73620a7bf80e.jpg"
+  );
+  alert("Link QRIS berhasil disalin!");
+}
+</script>
+
+</body>
+</html>
