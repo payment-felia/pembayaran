@@ -10,12 +10,23 @@ body{
   margin:0;
   font-family:Arial, sans-serif;
   color:white;
-  background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.15), transparent 40%),
-    radial-gradient(circle at bottom right, rgba(255,255,255,0.1), transparent 40%),
-    linear-gradient(135deg, #4b3ca7, #5a4ccf, #6a5acd);
-  background-attachment: fixed;
+  background: linear-gradient(
+    270deg,
+    #000000,
+    #3a0ca3,
+    #ffd700,
+    #000000
+  );
+  background-size: 600% 600%;
+  animation: bgMove 15s ease infinite;
 }
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 
 
@@ -39,13 +50,14 @@ body{
 }
 
 .box{
-  background: rgba(106, 90, 205, 0.85);
-  backdrop-filter: blur(6px);
+  background: rgba(60, 30, 120, 0.85);
+  backdrop-filter: blur(8px);
   padding:20px;
   margin-bottom:20px;
   border-radius:12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
+
 
 
 .box h2{
